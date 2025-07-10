@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Minecraft Official Site</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .hero-gradient {
+            background: linear-gradient(135deg, #7CFC00 0%, #228B22 100%);
+        }
+        .nav-item:hover .nav-dropdown {
+            display: block;
+        }
+        .game-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+        }
+        .news-card:hover img {
+            transform: scale(1.05);
+        }
+        .marketplace-item:hover {
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .mobile-menu {
+            transition: all 0.3s ease;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 font-sans">
+    <!-- Top Bar -->
+    <div class="bg-black text-white text-sm py-1 px-4 flex justify-between items-center">
+        <div>
+            <span>Welcome to Minecraft Official Site</span>
+        </div>
+        <div class="flex space-x-4">
+            <a href="https://www.minecraft.net/en-us/login" class="hover:text-green-400">Sign In</a>
+            <a href="https://www.minecraft.net/en-us/login" class="hover:text-green-400">Create Account</a>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="bg-green-700 text-white sticky top-0 z-50 shadow-lg">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <!-- Logo -->
+            <a href="https://www.minecraft.net/en-us" class="flex items-center">
+                <img src="images.png" alt="Minecraft Logo" class="h-10">
+            </a>
+
+            <!-- Desktop Menu -->
+            <div class="hidden md:flex space-x-6">
+                <div class="nav-item relative">
+                    <a href="#" class="hover:text-yellow-300 flex items-center">
+                        Games <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white text-black rounded shadow-lg hidden z-50">
+                        <!-- Dropdown content -->
+                        <div class="p-4">
+                            <h3 class="font-bold text-green-700 mb-2">Games</h3>
+                            <a href="https://www.minecraft.net/en-us" class="block py-2 hover:bg-gray-100">Minecraft</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Minecraft Dungeons</a>
+                            <a href="https://www.minecraft.net/en-us/about-legends" class="block py-2 hover:bg-gray-100">Minecraft Legends</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Minecraft Education</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item relative">
+                    <a href="#" class="hover:text-yellow-300 flex items-center">
+                        Shop <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white text-black rounded shadow-lg hidden z-50">
+                        <div class="p-4">
+                            <h3 class="font-bold text-green-700 mb-2">Shop</h3>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Marketplace</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Merch</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Gift Cards</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item relative">
+                    <a href="#" class="hover:text-yellow-300 flex items-center">
+                        News <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white text-black rounded shadow-lg hidden z-50">
+                        <div class="p-4">
+                            <h3 class="font-bold text-green-700 mb-2">News</h3>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Latest News</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Community</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Wallpapers</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="nav-item relative">
+                    <a href="#" class="hover:text-yellow-300 flex items-center">
+                        Support <i class="fas fa-chevron-down ml-1 text-xs"></i>
+                    </a>
+                    <div class="nav-dropdown absolute left-0 mt-2 w-64 bg-white text-black rounded shadow-lg hidden z-50">
+                        <div class="p-4">
+                            <h3 class="font-bold text-green-700 mb-2">Support</h3>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Help Center</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Downloads</a>
+                            <a href="#" class="block py-2 hover:bg-gray-100">Feedback</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Right Side Icons -->
+            <div class="hidden md:flex items-center space-x-4">
+                <a href="#" class="hover:text-yellow-300"><i class="fas fa-search"></i></a>
+                <a href="#" class="hover:text-yellow-300 flex items-center">
+                    <i class="fas fa-user-circle mr-1"></i> Account
+                </a>
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-1 rounded-full font-medium flex items-center">
+                    <i class="fas fa-shopping-cart mr-2"></i> Buy
+                </a>
+            </div>
+
+            <!-- Mobile Menu Button -->
+            <button id="mobile-menu-button" class="md:hidden text-white focus:outline-none">
+                <i class="fas fa-bars text-2xl"></i>
+            </button>
+        </div>
+
+        <!-- Mobile Menu -->
+        <div id="mobile-menu" class="mobile-menu hidden md:hidden bg-green-800 absolute w-full left-0 px-4 pb-4 z-40">
+            <div class="flex flex-col space-y-3 py-3">
+                <a href="#" class="text-white hover:text-yellow-300 py-2 border-b border-green-600">Games</a>
+                <a href="#" class="text-white hover:text-yellow-300 py-2 border-b border-green-600">Shop</a>
+                <a href="#" class="text-white hover:text-yellow-300 py-2 border-b border-green-600">News</a>
+                <a href="#" class="text-white hover:text-yellow-300 py-2 border-b border-green-600">Support</a>
+                <a href="#" class="text-white hover:text-yellow-300 py-2 border-b border-green-600">Account</a>
+                <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black px-4 py-2 rounded-full font-medium text-center mt-2">
+                    Buy Minecraft
+                </a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-gradient text-white py-16 md:py-24">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-5xl font-bold mb-4">Welcome to Minecraft</h1>
+                <p class="text-xl mb-6">Explore infinite worlds and build everything from the simplest of homes to the grandest of castles.</p>
+                <div class="flex flex-col sm:flex-row space-y-3 sm:space-y-0 sm:space-x-4">
+                    <a href="#" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold py-3 px-6 rounded-full text-center">
+                        Get Minecraft
+                    </a>
+                    <a href="#" class="bg-transparent hover:bg-green-800 text-white font-bold py-3 px-6 border border-white rounded-full text-center">
+                        Learn More
+                    </a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="minecraft characters.webp" 
+                     alt="Minecraft Characters" 
+                     class="rounded-lg shadow-xl w-full max-w-md">
+            </div>
+        </div>
+    </section>
+
+    <!-- Featured Content -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Featured Content</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <!-- Card 1 -->
+                <div class="game-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="summer.jpg" 
+                         alt="Minecraft Update" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Summer Update</h3>
+                        <p class="text-gray-600 mb-4">New biomes, mobs, and blocks to explore in the latest update!</p>
+                        <a href="https://www.minecraft.net/en-us/updates/introducing-chase-the-skies?tabs=%7B%22tab-b-482b3c66da%22%3A0%7D" class="text-green-600 hover:text-green-800 font-medium">Learn More →</a>
+                    </div>
+                </div>
+                
+                <!-- Card 2 -->
+                <div class="game-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="dungeons.jpg" 
+                         alt="Minecraft Dungeons" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Minecraft Dungeons</h3>
+                        <p class="text-gray-600 mb-4">New DLC available now with exciting new adventures!</p>
+                        <a href="https://www.minecraft.net/en-us/store/minecraft-dungeons-ultimate-dlc" class="text-green-600 hover:text-green-800 font-medium">Get the DLC →</a>
+                    </div>
+                </div>
+                
+                <!-- Card 3 -->
+                <div class="game-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="legends.jpg" 
+                         alt="Minecraft Legends" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Minecraft Legends</h3>
+                        <p class="text-gray-600 mb-4">Lead your allies in heroic battles to defend the Overworld.</p>
+                        <a href="https://www.minecraft.net/en-us/about-legends" class="text-green-600 hover:text-green-800 font-medium">Play Now →</a>
+                    </div>
+                </div>
+                
+                <!-- Card 4 -->
+                <div class="game-card bg-gray-50 rounded-lg overflow-hidden shadow-md transition duration-300">
+                    <img src="education.webp" 
+                         alt="Minecraft Education" 
+                         class="w-full h-48 object-cover">
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Minecraft Education</h3>
+                        <p class="text-gray-600 mb-4">New STEM lessons available for classrooms worldwide.</p>
+                        <a href="https://education.minecraft.net/en-us" class="text-green-600 hover:text-green-800 font-medium">Explore →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Marketplace Section -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Marketplace</h2>
+                <a href="#" class="text-green-600 hover:text-green-800 font-medium">View All →</a>
+            </div>
+            
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
+                <!-- Marketplace Item 1 -->
+                <div class="marketplace-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <img src="https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/1674f1eb-6e47-4873-94d0-dd9c956efde9/CaveBiomes_Thumbnail_0.jpg" 
+                         alt="Cave Biomes" 
+                         class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-sm">Cave Biomes</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">4.4</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">830 <i class="fas fa-coins text-yellow-500"></i></span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1 rounded">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketplace Item 2 -->
+                <div class="marketplace-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <img src="https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/fd62636e-15e2-4c5a-a32b-775a7123505c/MoreSimpleStructures_Thumbnail_0.jpg" 
+                         alt="More Simple Structures" 
+                         class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-sm">Simple Structures</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">5.0</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">660 <i class="fas fa-coins text-yellow-500"></i></span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1 rounded">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketplace Item 3 -->
+                <div class="marketplace-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <img src="https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/aaa35ccc-1802-46bc-ab7f-ef3957fd4c74/MoreCustomBlocks2_Thumbnail_0.jpg" 
+                         alt="Custom Blocks" 
+                         class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-sm">Custom Blocks</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">4.6</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">660 <i class="fas fa-coins text-yellow-500"></i></span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1 rounded">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketplace Item 4 -->
+                <div class="marketplace-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <img src="https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/5358cfae-a424-496e-893e-2c91e9dbfe0b/MX_Thumbnail_0.jpg" 
+                         alt="Mexican Build Set" 
+                         class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-sm">Mexican Build Set</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">4.3</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">830 <i class="fas fa-coins text-yellow-500"></i></span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1 rounded">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketplace Item 5 -->
+                <div class="marketplace-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <img src="https://xforgeassets001.xboxlive.com/pf-namespace-b63a0803d3653643/18afca46-d07f-40a6-86d6-475251bdc3fa/DyedBlocksExpansion_Thumbnail_0.jpg" 
+                         alt="Dyed Blocks" 
+                         class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-sm">Dyed Blocks++</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">4.3</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">490 <i class="fas fa-coins text-yellow-500"></i></span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1 rounded">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Marketplace Item 6 -->
+                <div class="marketplace-item bg-white rounded-lg overflow-hidden shadow-sm hover:shadow-md transition duration-300">
+                    <img src="https://xforgeassets002.xboxlive.com/pf-namespace-b63a0803d3653643/7b0c060a-7d76-412e-9813-9f109cf09db9/DifficultyBrutal_Thumbnail_0.jpg" 
+                         alt="Brutal Difficulty" 
+                         class="w-full h-32 object-cover">
+                    <div class="p-3">
+                        <h3 class="font-medium text-sm">Brutal Difficulty</h3>
+                        <div class="flex items-center mt-1">
+                            <div class="flex text-yellow-400 text-xs">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                            </div>
+                            <span class="text-xs text-gray-500 ml-1">4.7</span>
+                        </div>
+                        <div class="flex justify-between items-center mt-2">
+                            <span class="text-green-600 font-bold">490 <i class="fas fa-coins text-yellow-500"></i></span>
+                            <button class="bg-green-600 hover:bg-green-700 text-white text-xs px-2 py-1 rounded">
+                                Get
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- News Section -->
+    <section class="py-12 bg-white">
+        <div class="container mx-auto px-4">
+            <div class="flex justify-between items-center mb-8">
+                <h2 class="text-3xl font-bold">Latest News</h2>
+                <a href="#" class="text-green-600 hover:text-green-800 font-medium">View All News →</a>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- News Card 1 -->
+                <div class="news-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                    <div class="overflow-hidden">
+                        <img src="https://www.minecraft.net/content/dam/games/minecraft/key-art/BaBWGreen277.jpg" 
+                             alt="Green World" 
+                             class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-green-600 font-medium">News</span>
+                        <h3 class="font-bold text-xl my-2">Keeping the world green</h3>
+                        <p class="text-gray-600 mb-4">How Mojang contributes to a more sustainable world</p>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News Card 2 -->
+                <div class="news-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                    <div class="overflow-hidden">
+                        <img src="https://www.minecraft.net/content/dam/games/minecraft/marketplace/Dwellers2_Tile277x277.jpg" 
+                             alt="Dwellers 2.0" 
+                             class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-green-600 font-medium">Marketplace</span>
+                        <h3 class="font-bold text-xl my-2">LET'S PLAY: DWELLERS 2.0</h3>
+                        <p class="text-gray-600 mb-4">Will this horror add-on be too scary for us? (yes)</p>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Read More →</a>
+                    </div>
+                </div>
+                
+                <!-- News Card 3 -->
+                <div class="news-card bg-gray-50 rounded-lg overflow-hidden shadow-md">
+                    <div class="overflow-hidden">
+                        <img src="https://www.minecraft.net/content/dam/games/minecraft/marketplace/Minecraft_SummerSale_Net_277x277.jpeg" 
+                             alt="Summer Sale" 
+                             class="w-full h-48 object-cover transition duration-500">
+                    </div>
+                    <div class="p-6">
+                        <span class="text-green-600 font-medium">Marketplace</span>
+                        <h3 class="font-bold text-xl my-2">Summer Sale 2025</h3>
+                        <p class="text-gray-600 mb-4">An ode to vacay offers</p>
+                        <a href="#" class="text-green-600 hover:text-green-800 font-medium">Read More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Game Trailers -->
+    <section class="py-12 bg-gray-100">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl font-bold text-center mb-12">Game Trailers</h2>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <!-- Video 1 -->
+                <div class="bg-black rounded-lg overflow-hidden shadow-xl">
+                    <div class="relative pt-[56.25%]">
+                        <iframe class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/r6Ja2ZxWbRE" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Minecraft Trailer</h3>
+                        <p class="text-gray-300">Explore your own unique worlds, survive the night, and create anything you can imagine!</p>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="bg-black rounded-lg overflow-hidden shadow-xl">
+                    <div class="relative pt-[56.25%]">
+                        <iframe class="absolute top-0 left-0 w-full h-full" 
+                                src="https://www.youtube.com/embed/CoZ2V7XsSYk" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                                allowfullscreen></iframe>
+                    </div>
+                    <div class="p-6">
+                        <h3 class="font-bold text-xl mb-2">Minecraft Dungeons Trailer</h3>
+                        <p class="text-gray-300">Discover an action-adventure game inspired by classic dungeon crawlers.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter -->
+    <section class="py-12 bg-green-700 text-white">
+        <div class="container mx-auto px-4 max-w-4xl text-center">
+            <h2 class="text-3xl font-bold mb-4">Get the latest Minecraft news!</h2>
+            <p class="mb-8">Enter your email address, select your country or region, and submit. Opt out at any time. We promise not to spam you.</p>
+            
+            <form class="flex flex-col md:flex-row gap-4 max-w-xl mx-auto">
+                <input type="email" placeholder="Email Address*" class="flex-grow px-4 py-3 rounded text-black">
+                <select class="px-4 py-3 rounded text-black">
+                    <option>Choose Country/Region</option>
+                    <option>United States</option>
+                    <option>United Kingdom</option>
+                    <option>Canada</option>
+                    <option>Australia</option>
+                </select>
+                <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-black font-bold px-6 py-3 rounded">
+                    Submit
+                </button>
+            </form>
+            
+            <div class="mt-4 text-sm">
+                <label class="flex items-center justify-center">
+                    <input type="checkbox" class="mr-2">
+                    <span>I will receive information, tips, and offers about Minecraft.</span>
+                </label>
+                <a href="#" class="underline mt-2 inline-block">Privacy Statement</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white pt-12 pb-6">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-8">
+                <!-- Column 1 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Games</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Minecraft</a></li>
+                        <li><a href="#" class="hover:text-green-400">Minecraft Dungeons</a></li>
+                        <li><a href="#" class="hover:text-green-400">Minecraft Legends</a></li>
+                        <li><a href="#" class="hover:text-green-400">Minecraft Education</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 2 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Community</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Community</a></li>
+                        <li><a href="#" class="hover:text-green-400">Creator Portal</a></li>
+                        <li><a href="#" class="hover:text-green-400">Careers</a></li>
+                        <li><a href="#" class="hover:text-green-400">Build a Better World</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 3 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Shop</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Marketplace</a></li>
+                        <li><a href="#" class="hover:text-green-400">Minecraft Shop</a></li>
+                        <li><a href="#" class="hover:text-green-400">Gift Cards</a></li>
+                    </ul>
+                </div>
+                
+                <!-- Column 4 -->
+                <div>
+                    <h3 class="font-bold text-lg mb-4">Support</h3>
+                    <ul class="space-y-2">
+                        <li><a href="#" class="hover:text-green-400">Help</a></li>
+                        <li><a href="#" class="hover:text-green-400">Feedback</a></li>
+                        <li><a href="#" class="hover:text-green-400">Site Map</a></li>
+                        <li><a href="#" class="hover:text-green-400">Download</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <!-- Social Links -->
+            <div class="flex justify-center space-x-6 mb-8">
+                <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-youtube"></i></a>
+                <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-instagram"></i></a>
+                <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-facebook"></i></a>
+                <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-twitter"></i></a>
+                <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-tiktok"></i></a>
+                <a href="#" class="text-2xl hover:text-green-400"><i class="fab fa-discord"></i></a>
+            </div>
+            
+            <!-- Logos and Copyright -->
+            <div class="flex flex-col md:flex-row justify-between items-center border-t border-gray-800 pt-6">
+                <div class="flex items-center space-x-4 mb-4 md:mb-0">
+                    <img src="https://www.minecraft.net/content/dam/games/minecraft/logos/Mojang2020Logo.png" 
+                         alt="Mojang Studios" 
+                         class="h-8">
+                    <img src="https://www.minecraft.net/content/dam/games/minecraft/logos/Logo_Xbox_Game_Studio.png" 
+                         alt="Xbox Game Studios" 
+                         class="h-8">
+                </div>
+                
+                <div class="text-center md:text-right">
+                    <p class="text-sm">© 2025 Mojang AB. TM Microsoft Corporation.</p>
+                    <div class="flex justify-center md:justify-end space-x-4 mt-2 text-sm">
+                        <a href="#" class="hover:text-green-400">Privacy and Cookies</a>
+                        <a href="#" class="hover:text-green-400">Terms of Use</a>
+                        <a href="#" class="hover:text-green-400">Trademarks</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            const menu = document.getElementById('mobile-menu');
+            menu.classList.toggle('hidden');
+        });
+
+        // Dropdown menus
+        const navItems = document.querySelectorAll('.nav-item');
+        navItems.forEach(item => {
+            item.addEventListener('mouseenter', function() {
+                this.querySelector('.nav-dropdown').classList.remove('hidden');
+            });
+            item.addEventListener('mouseleave', function() {
+                this.querySelector('.nav-dropdown').classList.add('hidden');
+            });
+        });
+
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+    </script>
+</body>
+</html>
